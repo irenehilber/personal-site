@@ -4,17 +4,19 @@ head
   title Personal Site
   meta(name='description', content='A personal site to show my progress.')
   meta(name='viewport', content='width=device-width, initial-scale=1')
-  link(rel='stylesheet', href='../css/normalize.css')
   link(rel='stylesheet', href='../css/main.css')
+  script(src='../js/smooth-scroll.js')
+  //- script(src='../../node_modules/smooth-scroll/dist/js/smooth-scroll.js')
+
  body
   div.section-visual.hero
-    div.container-shapes
-      a(href='#')
-        div.triangle
-      a(href='#')
-        div.square
-      a(href='#')
-        div.circle
+      div.container-shapes
+        a.js-link-explore(data-scroll href='#explore')
+          div.triangle
+        a(data-scroll href='#learn')
+          div.square
+        a(data-scroll href='#share')
+          div.circle
   div.content
     section.section-visual.explore#explore
       div.triangle-divider
@@ -25,5 +27,9 @@ head
     section.section-visual.share#share
       div.circle-divider
 
+  //- script(src='../js/main.js')
+
+script.
+  smoothScroll.init();
 
 

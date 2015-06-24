@@ -33,12 +33,11 @@ body {
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background: white; */
   left: 0;
-  transition: .25s;
-  will-change: transform;
-  transform: rotate(0deg) translateZ(0);
+  transition: .3s;
+  transform: rotate(0deg);
 
   &:hover {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
 /*  -webkit-clip-path: polygon(50% 100%, 2% 0, 100% 0);
     clip-path: polygon(50% 100%, 2% 0, 100% 0); */
   }
@@ -53,16 +52,37 @@ body {
   left: 200px;
   background: white;
 
+  transition: .3s;
+  transform: rotate(0deg);
+
+  &:hover {
+    transform: rotate(45deg);
+  }
+
 }
 
 .circle {
   position: absolute;
   width: 100px;
   height: 100px;
-  -webkit-clip-path: circle(50% at 50% 50%);
-  clip-path: circle(50% at 50% 50%);
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+/*   -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%); */
   left: 380px;
   background: white;
+
+  transition: .5s;
+  transform: rotateY(0deg);
+
+  &:hover {
+    transform: rotateY(180deg);
+
+  }
+
+
+
 
 
 }
