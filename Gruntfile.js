@@ -34,12 +34,21 @@ module.exports = function(grunt) {
       main: {
         files: [
           {flatten: true, expand: true, src: ['src/**/*.js'], dest: 'web/js/'},
+          {flatten: true, expand: true, src: ['src/assets/*'], dest: 'web/assets/'},
+
         ]
       }
     },
     watch: {
       scripts: {
         files: ['src/js/*.js'],
+        tasks: ['copy'],
+        options: {
+          spawn: false,
+        }
+      },
+      assets: {
+        files: ['src/assets/**'],
         tasks: ['copy'],
         options: {
           spawn: false,
@@ -65,7 +74,8 @@ module.exports = function(grunt) {
           src : [
             'web/css/*.css',
             'web/html/*.html',
-            'web/js/*.js'
+            'web/js/*.js',
+            'web/assets/**'
           ]
         },
         options: {
