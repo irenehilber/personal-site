@@ -4,6 +4,7 @@ head
   title Personal Site
   meta(name='description', content='A personal site to show my progress.')
   meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='stylesheet', href='../css/reset.css')
   link(rel='stylesheet', href='../css/main.css')
 
 
@@ -17,59 +18,44 @@ head
         a.js-anchor(data-scroll href='#share')
           div.circle
 
-  div.content
-    section.section-visual.explore#explore
-      div.triangle-divider
-      div.content-sections
-        article.column
-          div.icon-box
-            img.icon(src='../assets/noun_130008_cc.svg')
-            h1.title-icon
-        article.column
-          div.icon-box
-            img.icon.icon-focus(src='../assets/noun_163345_cc.svg')
-            h1.title-icon
-        article.column
-          div.icon-box
-            img.icon.icon-smaller(src='../assets/noun_16319_cc.svg')
-            h1.title-icon
 
-    section.section-visual.learn#learn
+  section.section-visual.explore#explore
+    a.js-anchor(data-scroll href='#explore')
+        div.triangle-divider
+    div.container-sections
+      article.column
+        h1.title-icon focus
+      article.column
+        h1.title-icon articles
+      article.column
+         h1.title-icon books
+
+  section.section-visual.learn#learn
+    a.js-anchor(data-scroll href='#learn')
       div.square-divider
-      div.content-sections
-        article.column
-          div.icon-box
-            img.icon.icon-smaller(src='../assets/noun_45868_cc.svg')
-            h1.title-icon
-        article.column
-          div.icon-box
-            img.icon.icon-smaller.icon-design(src='../assets/noun_5039_cc.svg')
-            h1.title-icon
-        article.column
-          div.icon-box
-            img.icon.icon-rotate(src='../assets/noun_655.svg')
-            h1.title-icon
+    div.container-sections
+      article.column
+        h1.title-icon key learnings
+      article.column
+        h1.title-icon code
+      article.column
+        h1.title-icon design
 
-    section.section-visual.share#share
+  section.section-visual.share#share
+    a.js-anchor(data-scroll href='#share')
       div.circle-divider
-      div.content-sections
-        article.column
-          div.icon-box
-            img.icon.icon-twitter(src='../assets/TwitterLogo_white.png')
-            h1.title-icon
-        article.column
-          div.icon-box
-            img.icon.icon-talk(src='../assets/noun_12155.svg')
-            h1.title-icon
-        article.column
-          div.icon-box
-            img.icon(src='../assets/Medium-logo-light100.png')
-            h1.title-icon
+    div.container-sections
+      article.column
+        h1.title-icon twitter
+      article.column
+        h1.title-icon talks
+      article.column
+        h1.title-icon blog posts
 
-    script(src='../js/smooth-scroll.js')
-    //- script(src='../js/main.js')
+  script(src='../js/smooth-scroll.js')
+  //- script(src='../js/main.js')
 
-    script.
-      smoothScroll.init();
+  script.
+    smoothScroll.init();
 
 
