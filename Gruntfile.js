@@ -3,6 +3,16 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    postcss: {
+      options: {
+        processors: [
+          require('autoprefixer-core')({browsers: 'last 2 versions'})
+        ]
+      },
+      dist: {
+        src: 'web/css/main.css'
+      }
+    },
     jade: {
       compile: {
         options: {
@@ -35,7 +45,8 @@ module.exports = function(grunt) {
         files: [
           {flatten: true, expand: true, src: ['src/**/*.js'], dest: 'web/js/'},
           {flatten: true, expand: true, src: ['src/assets/*'], dest: 'web/assets/'},
-
+          {flatten: true, expand: true, src: ['bower_components/smooth-scroll/dist/js/*.js'], dest: 'web/js/', filter: 'isFile'},
+          {flatten: true, expand: true, src: ['bower_components/jquery/dist/*.js'], dest: 'web/js/', filter: 'isFile'}
         ]
       }
     },
@@ -63,7 +74,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['src/css/*.scss'],
-        tasks: ['sass'],
+        tasks: ['sass', 'postcss'],
         options: {
           spawn: false,
         }
@@ -93,8 +104,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-postcss');
 
   // Default task(s).
-  grunt.registerTask('default', ['jade', 'sass', 'copy', 'browserSync', 'watch']);
+  grunt.registerTask('default', ['jade', 'sass', 'postcss', 'copy', 'browserSync', 'watch']);
+  grunt.registerTask('prod', ['jade', 'sass', 'postcss', 'copy']);
 
 };

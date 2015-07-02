@@ -1,0 +1,27 @@
+{
+  "name": "personal-site",
+  "version": "0.0.0",
+  "homepage": "https://github.com/irenehilber/personal-site",
+  "authors": [
+    "irenehilber <irene.hilber@gmx.ch>"
+  ],
+  "description": "site to show my progress",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#~5.3.7"
+  },
+  "resolutions": {
+    "smooth-scroll": "~5.3.7"
+  },
+  "dependencies": {
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#~5.3.7",
+    "jquery": "~2.1.4"
+  }
+}

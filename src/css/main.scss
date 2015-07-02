@@ -12,6 +12,23 @@ h1 {
   letter-spacing: 2px;
 }
 
+h2 {
+  font-family: sans-serif;
+  color: white;
+  font-weight: normal;
+  font-variant: small-caps;
+  font-size: 16px;
+  margin: 10px;
+  letter-spacing: 2px;
+}
+
+p {
+  font-family: sans-serif;
+  color: white;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
 .hero {
   background: #2dcfb1;
 }
@@ -61,8 +78,6 @@ h1 {
   position: absolute;
   width: 100px;
   height: 100px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
   border-radius: 50px;
   left: 380px;
   background: white;
@@ -80,28 +95,23 @@ h1 {
 
 .container-sections {
   padding-top: 200px;
-  /* font-size: 0;
-  padding-top: 100px; */
+
 }
 
-.column {
-  /* font-size: 1rem;
-  display: inline-block;
-  vertical-align: top;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; */
+.container {
+  display: flex;
+}
 
+.item {
+  box-sizing: border-box;
+
+}
+
+.content {
   padding: 10px;
-
-  width: 50%;
+  max-width: 800px;
   margin: 20px auto;
-
-
-
-
   text-align: center;
-
   background: rgba(255, 255, 255, .3);
 }
 
@@ -147,17 +157,17 @@ h1 {
 
 .circle-divider {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  position: absolute;
+
+  width: 100px; height: 100px;
   left: 50%;
-  margin-left: -50px;
-  margin-top: -50px;
+  margin-left: -50px; margin-top: -50px;
+
+  border-radius: 50px;
   background: white;
+
+  transform: translateZ(0);
 }
+
 
 
 
