@@ -1,25 +1,86 @@
-body {
+/* * {
+  outline: 1px solid rgba(255,0,0,.2);
+} */
+
+$base-font-size: 16px;
+$size-base: 0.75rem;
+
+html {
+  font-size: $base-font-size;
+}
+
+// typography -----------
+.text-hero {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 50vh;
+}
+
+.title-main {
+  font-size: 4rem;
   margin: 0;
+}
+.title-focus {
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  color: white;
+  font-weight: normal;
+  letter-spacing: 0.1rem;
+  padding-bottom: 10px;
+
+}
+.text-lead {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.text-copy {
+  .title-main, .title-sub, .text-lead {
+    margin-bottom: 0.5rem;
+  }
 }
 
 h1 {
   font-family: sans-serif;
   color: white;
   font-weight: normal;
-  font-variant: small-caps;
-  font-size: 20px;
-  margin: 10px;
+  text-transform: uppercase;
+  font-size: 15px;
   letter-spacing: 2px;
+  padding-bottom: 20px;
+}
+
+h1.hero-text {
+  font-family: serif;
+  text-align: center;
+  font-style: italic;
+  font-size: 20px;
+  padding-bottom: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h2 {
   font-family: sans-serif;
   color: white;
+  font-weight: lighter;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 30px;
+  margin-top: 15px;
+
+}
+
+h3 {
+  font-family: sans-serif;
+  color: white;
   font-weight: normal;
-  font-variant: small-caps;
-  font-size: 16px;
-  margin: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  font-size: 13px;
+  padding-bottom: 10px;
 }
 
 p {
@@ -27,10 +88,40 @@ p {
   color: white;
   font-weight: lighter;
   font-size: 12px;
+  line-height: 20px;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  border-bottom: 1px;
+  font-style: italic;
+
+}
+
+
+
+// layout ----------------------
+.position-middle {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+// hero
 .hero {
   background: #2dcfb1;
+  position: relative;
+  min-height: 100vh;
 }
 
 .container-shapes {
@@ -39,19 +130,16 @@ p {
   top: 50%;
   margin-top: -50px;
   left: 50%;
-  margin-left: -241px;
-
+  transform: translate(-50%, -50%);
 }
 
 .triangle {
-
   position: absolute;
-  width: 0;
-  height: 0;
+  left: 0;
+  width: 0; height: 0;
   border-left: 60px solid transparent;
   border-right: 60px solid transparent;
   border-bottom: 100px solid white;
-  left: 0;
   transition: .3s;
   transform: rotate(0deg);
   &:hover {
@@ -60,10 +148,8 @@ p {
 }
 
 .square {
-
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 100px; height: 100px;
   left: 200px;
   background: white;
   transition: .3s;
@@ -74,13 +160,14 @@ p {
 }
 
 .circle {
-
   position: absolute;
   width: 100px;
   height: 100px;
-  border-radius: 50px;
   left: 380px;
+
+  border-radius: 50px;
   background: white;
+
   transition: .5s;
   transform: rotateY(0deg);
   &:hover {
@@ -88,85 +175,144 @@ p {
   }
 }
 
+
+// sections
 .section-visual {
-  min-height: 100vh;
   position: relative;
+  min-height: 100vh;
 }
-
-.container-sections {
-  padding-top: 200px;
-
-}
-
-.container {
-  display: flex;
-}
-
-.item {
-  box-sizing: border-box;
-
-}
-
-.content {
-  padding: 10px;
-  max-width: 800px;
-  margin: 20px auto;
-  text-align: center;
-  background: rgba(255, 255, 255, .3);
-}
-
 
 .explore {
+
   background: #39cadf;
-  height: 500px;
-}
-
-.triangle-divider {
-  position: absolute;
-  margin: 0 auto;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: -5px;
-
-  width: 0;
-  height: 0;
-  border-left: 60px solid transparent;
-  border-right: 60px solid transparent;
-  border-bottom: 100px solid white;
 }
 
 .learn {
   background: #62cd93;
-  height: 500px;
+
 }
 
+.share {
+  background: #eae374;
+
+}
+
+.twitter,
+.medium {
+  width: 4.5rem;
+}
+
+.talks {
+  padding-top: 0.9rem;
+  width: 2.9rem;
+}
+
+.articles {
+  padding-top: 0.9rem;
+  width: 2.5rem;
+}
+
+.books {
+
+  padding-top: 0.9rem;
+  width: 2.8rem;
+}
+
+.key {
+  width: 3rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.code,
+.pen,
+.link {
+  width: 3rem;
+  padding-top: 0.9rem;
+}
+
+.telescope {
+  width: 3.5rem;
+  padding-top: 0.9rem;
+}
+
+.wrapper {
+  padding-top: 1.3rem;
+}
+
+// content inside sections
+.container-sections {
+  position: relative;
+  width: 690px;
+  margin: 0 auto;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.content {
+  padding: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, .2);
+  margin: 1.5rem 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* margin-top: 20px; */
+}
+
+.item {
+  box-sizing: border-box;
+  min-width: 100px;
+
+
+}
+
+.codepen {
+  min-width: 300px;
+  min-height: 200px;
+
+
+}
+
+// dividers triangle - square - circle
+.triangle-divider {
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  margin: 0 auto;
+  transform: translate(-50%, -50%);
+  width: 0; height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid white;
+}
 .square-divider {
+  position: absolute;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  margin-top: -50px;
+  background: white;
+}
+.circle-divider {
   position: absolute;
   width: 100px;
   height: 100px;
   left: 50%;
   margin-left: -50px;
   margin-top: -50px;
-  background: white;
-}
-
-.share {
-  background: #eae374;
-  height: 500px;
-}
-
-.circle-divider {
-  position: absolute;
-
-  width: 100px; height: 100px;
-  left: 50%;
-  margin-left: -50px; margin-top: -50px;
-
   border-radius: 50px;
   background: white;
-
-  transform: translateZ(0);
 }
+
+
+
+
+
 
 
 

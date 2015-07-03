@@ -9,61 +9,94 @@ head
 
 
  body
-  div.section-visual.hero
-      div.container-shapes
-        a.js-anchor(data-scroll href='#explore')
-          div.triangle
-        a.js-anchor(data-scroll href='#learn')
-          div.square
-        a.js-anchor(data-scroll href='#share')
-          div.circle
-
+  div.hero#hero
+    //- h1.text-hero.position-middle Explore &nbsp &nbsp Learn &nbsp &nbsp Share
+    h1.text-hero.position-middle Everything you learn is yours.
+    div.container-shapes.hidden
+      a.js-anchor(data-scroll href='#explore')
+        div.triangle
+      a.js-anchor(data-scroll href='#learn')
+        div.square
+      a.js-anchor(data-scroll href='#share')
+        div.circle
 
   section.section-visual.explore#explore
     a.js-anchor(data-scroll href='#explore')
-        div.triangle-divider
+      div.triangle-divider
     div.container-sections
       article.content
-        h1 focus
+        img.telescope(src='../assets/telescope.svg')
         div.container
           div.item
-            h2 future
-            p concept
+            h2 &larr;
+            h3 UX Research
           div.item
-            h2 current
-            p front-end
+            h2 &darr;
+            h3.title-focus Front-end Development
+            p Grids with CSS
+            p Javascript
+            p Bower
+            p Grunt
+            p Node.js & npm
+            p Git & GitHub
+            p Terminal
+            p HTML & CSS
           div.item
-            h2 past
-            p ux research
+            h2 &rarr;
+            h3 Concept Design
       article.content
-        h1 articles
+        img.articles(src='../assets/noun_16319_cc.svg')
+        div.wrapper
+          p
+            a(href='http://mac.appstorm.net/how-to/utilities-how-to/how-to-use-terminal-the-basics/') How to Use Terminal: The Basics  –  Trey Trawick
       article.content
-         h1 books
+         img.books(src='../assets/noun_130008_cc.svg')
+         div.wrapper
+          p
+            a(href='http://www.amazon.com/Change-Design-Transforms-Organizations-Innovation/dp/0061766089') Change by Design – Tim Brown
+          p
+            a(href='http://eloquentjavascript.net/') Eloquent Javascript – Marijn Haverbeke
+
 
   section.section-visual.learn#learn
     a.js-anchor(data-scroll href='#learn')
       div.square-divider
     div.container-sections
       article.content
-        h1 key learnings
+        img.key(src='../assets/key.svg')
+        div.wrapper
+          p.
+            You never know your users story before he tells it to you – always be aware of your assumptions.
+          p –
+          p.
+            Users are unpredictable – you can never predict what is going to work and what is not.
+          p –
       article.content
-        h1 code
+          img.code(src='../assets/code.svg')
+          div.wrapper
+            div.codepen
+              <p data-height="338" data-theme-id="16488" data-slug-hash="pJwWpx" data-default-tab="result" data-user="irie" class='codepen'>See the Pen <a href='http://codepen.io/irie/pen/pJwWpx/'>Game with JS - FINAL</a> by Irene (<a href='http://codepen.io/irie'>@irie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+              <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
       article.content
-        h1 design
+        img.pen(src='../assets/pen.svg')
+
+
+
 
   section.section-visual.share#share
     a.js-anchor(data-scroll href='#share')
       div.circle-divider
     div.container-sections
       article.content
-        h1 twitter
+        img.twitter(src='../assets/TwitterLogo_white.png')
       article.content
-        h1 talks
+        img.talks(src='../assets/noun_12155.svg')
       article.content
-        h1 blog posts
+        img.medium(src='../assets/Medium-logo-light100.png')
 
   script(src='../js/smooth-scroll.js')
-  //- script(src='../js/main.js')
+  script(src='../js/jquery.js')
+  script(src='../js/main.js')
 
   script.
     smoothScroll.init();
